@@ -2,3 +2,8 @@ body {
     background-color: cadetblue;
     color: white;
 }
+
+.item-image {
+    width: 100px;
+    height: 100px;
+}

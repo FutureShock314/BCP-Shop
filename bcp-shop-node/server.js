@@ -17,17 +17,12 @@ const fs = require('fs');
 console.log('ho');
 
 
-function getHTML (path) {
-    fs.readFile(path, (err, data) => {
-        if (err) throw err
-        return data;
-    });
-}
-
 // App
 const app = express();
 app.get('/', (req, res) => {
-	res.send(getHTML('./index.html'));
+    let my_data = fs.readFileSync('./index.html',{ encoding: 'utf8', flag: 'r' });
+    console.info(my_data)
+	res.send(my_data);
 });
 
 app.use(express.static('public'));
