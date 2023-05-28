@@ -5,3 +5,5 @@
 -   run `serve dist/`
 -   go to the address given
 -   check the console in inspect to see the output!
+
+May need to be ran in cmd and bash not powershell
