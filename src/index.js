@@ -30,15 +30,33 @@ onAuthStateChanged(auth, user => {
 
 const firestore = getFirestore();
 
-let username = 'nathan';
-let email = 'nathan@gmail.com';
-const user = doc(firestore, 'users/'+username);
-function addUser() {
-  const docData = {
-    name: username,
-    email: email
-  };
-  setDoc(user, docData);
+let username;
+let fname;
+let lname;
+let email;
+window.onload = function() {
+    var form = document.getElementsByClassName('user_data_form')[0];
+    form.addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        username = document.getElementById('username').value;
+        fname = document.getElementById('fname').value;
+        lname = document.getElementById('lname').value;
+        email = document.getElementById('email').value;
+        const user = doc(firestore, 'users/'+username);
+        function addUser() {
+        const docData = {
+            first_name: fname,
+            last_name: lname,
+            email: email
+        };
+        setDoc(user, docData);
+        };
+        addUser();
+    });
 };
-addUser();
+
+
+
+
 
