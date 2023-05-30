@@ -5,6 +5,7 @@ import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 console.log('working!!!')
 
+
 const firebaseApp = initializeApp({
     apiKey: "AIzaSyDhotO15Sh5GMBR1Eo_Ol83W70ndyYcCvA",
     authDomain: "bcp-shop-3cf1e.firebaseapp.com",
@@ -14,6 +15,8 @@ const firebaseApp = initializeApp({
     appId: "1:180818875291:web:3a11cb9065560aed0a873e",
     measurementId: "G-QYXLV35DG1"
 });
+
+
 const auth = getAuth(firebaseApp);
 
 onAuthStateChanged(auth, user => {
