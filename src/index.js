@@ -2,6 +2,7 @@
 //import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 import { initializeApp } from 'firebase/app';
 import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 console.log('working!!!')
 
@@ -26,4 +27,18 @@ onAuthStateChanged(auth, user => {
         console.log('no user!');
     }
 });
+
+const firestore = getFirestore();
+
+let username = 'nathan';
+let email = 'nathan@gmail.com';
+const user = doc(firestore, 'users/'+username);
+function addUser() {
+  const docData = {
+    name: username,
+    email: email
+  };
+  setDoc(user, docData);
+};
+addUser();
 
