@@ -35,7 +35,7 @@ let fname;
 let lname;
 let email;
 window.onload = function() {
-    var form = document.getElementById('user_data_form');
+    var form = document.getElementsByClassName('user_data_form')[0];
     form.addEventListener("submit", function(event) {
         event.preventDefault();
 
