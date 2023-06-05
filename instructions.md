@@ -3,6 +3,7 @@
 -   run `npm install`
 -   run `"./node_modules/.bin/webpack"`
 -   run `serve dist/`
+    - You may need to run `npm install --global serve`
 -   go to the address given
 -   check the console in inspect to see the output!
 
