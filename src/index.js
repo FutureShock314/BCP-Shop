@@ -45,12 +45,12 @@ window.onload = function() {
         email = document.getElementById('email').value;
         const user = doc(firestore, 'users/'+username);
         function addUser() {
-        const docData = {
-            first_name: fname,
-            last_name: lname,
-            email: email
-        };
-        setDoc(user, docData);
+            const docData = {
+                first_name: fname,
+                last_name: lname,
+                email: email
+            };
+            setDoc(user, docData);
         };
         addUser();
     });
