@@ -1,0 +1,40 @@
+dialog[open] {
+    animation: fade-show 1s ease normal;
+}
+
+@keyframes show{
+    from {
+        transform: translateY(-110%);
+    }
+    to {
+        transform: translateY(0%);
+    }
+}
+
+@keyframes fade-show {
+    from {
+        opacity: 0%;
+    }
+}
+
+
+dialog::backdrop {
+    background: rgb(255, 0, 0);
+    opacity: 50%;
+    animation: fade-show 1s ease normal;
+}
+
+dialog.hide {
+    animation: fade-hide 1s ease normal;
+}
+
+dialog.hide::backdrop {
+    animation: fade-hide 1s ease normal;
+}
+
+
+@keyframes fade-hide {
+    to {
+        opacity: 0%;
+    }
+}

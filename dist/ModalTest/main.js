@@ -6,6 +6,19 @@ openModal.addEventListener('click', () => {
     modal.showModal()
 })
 
+// closeModal.addEventListener('click', () => {
+//     modal.close()
+// })
+
 closeModal.addEventListener('click', () => {
-    modal.close()
+    modal.classList.add('hide');
+    console.log('added hide')
+    modal.addEventListener('animationend', function(){
+        console.log('added event listener')
+        modal.classList.remove('hide');
+        console.log('removed "hide"')
+        modal.close();
+        modal.removeEventListener('animationend',  arguments.callee, false);
+        console.log('removed animationEnd check')
+    }, false);
 })
