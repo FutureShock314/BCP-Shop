@@ -20,8 +20,20 @@ const firebaseApp = initializeApp({
 
 const auth = getAuth(firebaseApp);
 
-var email="someone@example.com";
-var password="password";
+let email;
+let password;
+window.onload = () => {
+  email = document.getElementById('email').value;
+  password = document.getElementById('password').value;
+
+  console.log('Email: ' + email);
+  console.log('Password: ' + password);
+  
+  document.getElementById('add-user').addEventListener("click", function() {
+    accountCreate(email, password)
+  });
+}
+
 
 
 
