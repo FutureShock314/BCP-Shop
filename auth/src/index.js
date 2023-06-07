@@ -1,7 +1,7 @@
 //import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
 //import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword  } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 console.log('working!!!')
@@ -23,19 +23,17 @@ const auth = getAuth(firebaseApp);
 let email;
 let password;
 window.onload = () => {
-  email = document.getElementById('email').value;
-  password = document.getElementById('password').value;
-
-  console.log('Email: ' + email);
-  console.log('Password: ' + password);
-  
-  document.getElementById('add-user').addEventListener("click", function() {
+  document.getElementById('add-user').addEventListener("click", () => {
+    email = document.getElementById('email').value;
+    password = document.getElementById('password').value;
     accountCreate(auth, email, password);
   });
-  document.getElementById('sign-in').addEventListener("click", function() {
+  document.getElementById('sign-in').addEventListener("click", () => {
+    email = document.getElementById('email').value;
+    password = document.getElementById('password').value;
     accountLogin(auth, email, password);
   });
-  document.getElementById('sign-out').addEventListener("click", function() {
+  document.getElementById('sign-out').addEventListener("click", () => {
     accountSignOut();
   });
 }
@@ -45,9 +43,9 @@ window.onload = () => {
 
 
 //* Create Account *//
-var accountCreate = function(auth, email, password) {
+var accountCreate = (auth, email, password) => {
   createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
+  .then((userCredential) => {
       const user = userCredential.user;
       console.log('User: ' + user);
     })
@@ -61,7 +59,6 @@ var accountCreate = function(auth, email, password) {
 
 //* Login Account *//
 var accountLogin = function(auth, email, password) {
-  window.onload = function() {
       signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         // Signed in 
@@ -74,12 +71,12 @@ var accountLogin = function(auth, email, password) {
         console.error('Error Code: ' + errorCode);
         console.error('Error Message: ' + errorMessage);
       });
-  };
 }
 
 //* Sign-out Account *//
 var accountSignOut = function() {
   signOut(auth).then(() => {
+    console.log('Sign-Out Account successful');
     // Sign-out successful.
   }).catch((error) => {
     // An error happened.
