@@ -1,7 +1,15 @@
 //import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
 //import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
+import {
+  getAuth,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  setPersistence, 
+  browserLocalPersistence
+} from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 console.log('working!!!')
@@ -58,19 +66,32 @@ var accountCreate = (auth, email, password) => {
 }
 
 //* Login Account *//
+
+
+
+
 var accountLogin = function(auth, email, password) {
-      signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in 
-        const user = userCredential.user;
-        console.log(user);
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        console.error('Error Code: ' + errorCode);
-        console.error('Error Message: ' + errorMessage);
-      });
+  setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    return signInWithEmailAndPassword(auth, email, password)
+    /*.then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Error Code: ' + errorCode);
+      console.error('Error Message: ' + errorMessage);
+    });*/
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error(errorMessage);
+    console.error(errorCode)
+  });
 }
 
 //* Sign-out Account *//
@@ -82,3 +103,10 @@ var accountSignOut = function() {
     // An error happened.
   });
 }
+
+
+auth.onAuthStateChanged(user => {
+  if(user) {
+    window.location = 'test'; //After successful login, user will be redirected to home.html
+  }
+});
