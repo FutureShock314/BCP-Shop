@@ -30,7 +30,13 @@ window.onload = () => {
   console.log('Password: ' + password);
   
   document.getElementById('add-user').addEventListener("click", function() {
-    accountCreate(email, password)
+    accountCreate(auth, email, password);
+  });
+  document.getElementById('sign-in').addEventListener("click", function() {
+    accountLogin(auth, email, password);
+  });
+  document.getElementById('sign-out').addEventListener("click", function() {
+    accountSignOut();
   });
 }
 
