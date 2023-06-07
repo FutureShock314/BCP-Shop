@@ -5,10 +5,12 @@ dialog {
 
     border: none;
     box-shadow: 0px 15px 30px 2px black;
-    border-radius: 5px;
+    border-radius: 30px;
 
-    /* width: 500px;
-    height: 750px; */
+    width: 500px;
+    height: 750px;
+
+    position: relative;
 }
 dialog::backdrop {
     background: rgb(255, 0, 0);
@@ -47,4 +49,23 @@ dialog.hide::backdrop {
     to {
         opacity: 0%;
     }
+}
+
+
+.close-modal {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 5px solid red;
+    border-radius: 0px 30px 0px 5px;
+}
+
+.close-modal > i {
+    position: absolute;
+    top: 12.5px;
+    right: 12.5px;
 }
