@@ -21,6 +21,6 @@ closeModal.addEventListener('click', () => {
         console.log('removed "hide"')
         modal.close();
         modal.removeEventListener('animationend',  arguments.callee, false);
-        console.log('removed animationEnd check')
+        console.log('removed animationend check')
     }, false);
 })
