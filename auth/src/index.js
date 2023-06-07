@@ -1,7 +1,7 @@
 //import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
 //import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import { getAuth, onAuthStateChanged, createUserWithEmailAndPassword  } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 console.log('working!!!')
@@ -20,20 +20,62 @@ const firebaseApp = initializeApp({
 
 const auth = getAuth(firebaseApp);
 
-var email="someone@example.com";
-var password="password";
+let email;
+let password;
+window.onload = () => {
+  email = document.getElementById('email').value;
+  password = document.getElementById('password').value;
 
-//Create User with Email and Password
-window.onload = function() {
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
-        document.getElementById("output3").innerHTML = "<em>running</em>";
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
+  console.log('Email: ' + email);
+  console.log('Password: ' + password);
+  
+  document.getElementById('add-user').addEventListener("click", function() {
+    accountCreate(email, password)
+  });
+}
 
-        document.getElementById("output1").innerHTML = errorCode;
-        document.getElementById("output2").innerHTML = errorMessage;
-        console.log(errorCode);
-        console.log(errorMessage);
+
+
+
+
+//* Create Account *//
+var accountCreate = function(auth, email, password) {
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      const user = userCredential.user;
+      console.log('User: ' + user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Error Code: ' + errorCode);
+      console.error('Error Message: ' + errorMessage);
     });
-};
+}
+
+//* Login Account *//
+var accountLogin = function(auth, email, password) {
+  window.onload = function() {
+      signInWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error('Error Code: ' + errorCode);
+        console.error('Error Message: ' + errorMessage);
+      });
+  };
+}
+
+//* Sign-out Account *//
+var accountSignOut = function() {
+  signOut(auth).then(() => {
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+}
