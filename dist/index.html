@@ -5,28 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
-    <script src="/bundle.js"></script>
-    <link rel="stylesheet" href="./style.css">
     <!--type="module"-->
+    <link rel="stylesheet" href="style.css">
 </head>
-<bo>
-    <h1>Hi!</h1> 
-    <form class="user_data_form">
-        <label for="username">Username: </label>
-        <input type="text" placeholder="johnthecool" id="username">
-        <br>
-        <label for="fname">Firstname: </label>
-        <input type="text" placeholder="John" id="fname">
-        <br>
-        <label for="lname">Lastname: </label>
-        <input type="text" placeholder="Doe" id="lname">
-        <br>
+<body>
+    <h1>Hi!</h1>
+
+    <div id="user-form">
         <label for="email">Email: </label>
-        <input type="email" placeholder="john.doe@gmail.com" id="email">
-        <br>
-        <input type="submit" value="Submit">
-    </form>
-    <br>
-    <a href="./ModalTest/">scuffed thing lol</a>
+        <input type="email" id="email" placeholder="john.doe@gmail.com">
+        
+        <label for="password">Password: </label>
+        <input type="password" id="password">
+
+
+        <button id="add-user">Add User</button>
+        <button id="sign-in">Login</button>
+        <button id="sign-out">Sign Out</button>
+
+    </div>
+
+
+    <script src="/main.js"></script>
 </body>
 </html>
