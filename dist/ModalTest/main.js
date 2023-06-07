@@ -10,6 +10,8 @@ openModal.addEventListener('click', () => {
 //     modal.close()
 // })
 
+// * play anim for hiding modal
+
 closeModal.addEventListener('click', () => {
     modal.classList.add('hide');
     console.log('added hide')

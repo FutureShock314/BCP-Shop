@@ -1,23 +1,15 @@
-dialog[open] {
-    animation: fade-show 1s ease normal;
+/* * formatting for modals */
+
+dialog {
+    animation: fade-show-move 1s ease normal;
+
+    border: none;
+    box-shadow: 0px 15px 30px 2px black;
+    border-radius: 5px;
+
+    /* width: 500px;
+    height: 750px; */
 }
-
-@keyframes show{
-    from {
-        transform: translateY(-110%);
-    }
-    to {
-        transform: translateY(0%);
-    }
-}
-
-@keyframes fade-show {
-    from {
-        opacity: 0%;
-    }
-}
-
-
 dialog::backdrop {
     background: rgb(255, 0, 0);
     opacity: 50%;
@@ -25,14 +17,32 @@ dialog::backdrop {
 }
 
 dialog.hide {
-    animation: fade-hide 1s ease normal;
+    animation: fade-hide-move 1s ease normal;
 }
-
 dialog.hide::backdrop {
     animation: fade-hide 1s ease normal;
 }
 
+ /* * KeyFrames for fade-hide/show */
 
+@keyframes fade-show-move {
+    from {
+        opacity: 0%;
+        transform: translateY(-110%)
+    }
+}
+@keyframes fade-show {
+    from {
+        opacity: 0%;
+    }
+}
+
+@keyframes fade-hide-move {
+    to {
+        opacity: 0%;
+        transform: translateY(-110%)
+    }
+}
 @keyframes fade-hide {
     to {
         opacity: 0%;
