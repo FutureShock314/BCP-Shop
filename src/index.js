@@ -1,7 +1,15 @@
 //import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';
 //import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';
 import { initializeApp } from 'firebase/app';
-import { getAuth, onAuthStateChanged } from 'firebase/auth';
+import {
+  getAuth,
+  onAuthStateChanged,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  setPersistence, 
+  browserLocalPersistence
+} from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
 console.log('working!!!')
@@ -20,43 +28,89 @@ const firebaseApp = initializeApp({
 
 const auth = getAuth(firebaseApp);
 
-onAuthStateChanged(auth, user => {
-    if (user != null) {
-        console.log('logged in!');
-    } else {
-        console.log('no user!');
-    }
-});
-
-const firestore = getFirestore();
-
-let username;
-let fname;
-let lname;
 let email;
-window.onload = function() {
-    var form = document.getElementsByClassName('user_data_form')[0];
-    form.addEventListener("submit", function(event) {
-        event.preventDefault();
+let password;
+window.onload = () => {
+  document.getElementById('add-user').addEventListener("click", () => {
+    email = document.getElementById('email').value;
+    password = document.getElementById('password').value;
+    accountCreate(auth, email, password);
+  });
+  document.getElementById('sign-in').addEventListener("click", () => {
+    email = document.getElementById('email').value;
+    password = document.getElementById('password').value;
+    accountLogin(auth, email, password);
+  });
+  document.getElementById('sign-out').addEventListener("click", () => {
+    accountSignOut();
+  });
+}
 
-        username = document.getElementById('username').value;
-        fname = document.getElementById('fname').value;
-        lname = document.getElementById('lname').value;
-        email = document.getElementById('email').value;
-        const user = doc(firestore, 'users/'+username);
-        function addUser() {
-            const docData = {
-                first_name: fname,
-                last_name: lname,
-                email: email
-            };
-            setDoc(user, docData);
-        };
-        addUser();
+
+
+
+
+//* Create Account *//
+var accountCreate = (auth, email, password) => {
+  createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+      const user = userCredential.user;
+      console.log('User: ' + user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Error Code: ' + errorCode);
+      console.error('Error Message: ' + errorMessage);
     });
-};
+}
+
+//* Login Account *//
 
 
 
 
+var accountLogin = function(auth, email, password) {
+  setPersistence(auth, browserLocalPersistence)
+  .then(() => {
+    return signInWithEmailAndPassword(auth, email, password)
+    /*.then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      console.log(user);
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.error('Error Code: ' + errorCode);
+      console.error('Error Message: ' + errorMessage);
+    });*/
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+    console.error(errorMessage);
+    console.error(errorCode)
+  });
+}
 
+//* Sign-out Account *//
+var accountSignOut = function() {
+  signOut(auth).then(() => {
+    console.log('Sign-Out Account successful');
+    window.location = '/';
+    // Sign-out successful.
+  }).catch((error) => {
+    // An error happened.
+  });
+}
+
+
+auth.onAuthStateChanged(user => {
+  if(user) {
+    window.location = 'test'; //After successful login, user will be redirected to home.html
+  }
+  else {
+    window.location = '/';
+  }
+});
