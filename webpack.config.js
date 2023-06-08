@@ -7,7 +7,8 @@ module.exports = {
      "./login/main": './src/login.js',
      //"./login/test/main": './src/test.js',
      "./login/home/main": './src/home.js',
-     "./ModalTest/main": './src/modal-test.js'
+     "./ModalTest/main": './src/modal-test.js',
+     "./main": './src/main.js',
      },
     output: {
       filename: '[name].js',
