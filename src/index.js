@@ -114,3 +114,11 @@ auth.onAuthStateChanged(user => {
     window.location = 'other';
   }
 });
+
+
+function signOut(){
+  document.getElementById('sign-out').addEventListener('click', function(event) {
+    firebase.auth().signOut();
+    alert('Hi');
+    window.location='userpage.html';
+  });}
