@@ -1,7 +1,7 @@
 # How to Use
 
 - run `npm install`
-- run `"./node_modules/.bin/webpack"`
+- run `npx webpack`
 - run `serve dist`
   - You may need to run `npm install --global serve`
 - go to the address given
