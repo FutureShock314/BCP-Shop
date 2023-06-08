@@ -111,6 +111,6 @@ auth.onAuthStateChanged(user => {
     window.location = 'test'; //After successful login, user will be redirected to home.html
   }
   else {
-    window.location = '/';
+    window.location = 'other';
   }
 });
