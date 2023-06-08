@@ -45,7 +45,15 @@ auth.onAuthStateChanged(user => {
   if(user) {
     window.location = 'test'; //After successful login, user will be redirected to home.html
   }
-  else {
-    window.location = '../other';
-  }
 });
+//   else {
+//     window.location = '../other';
+//   }
+// });
+
+function logOut(){
+  document.getElementById('sign-out').addEventListener('click', function(event) {
+    firebase.auth().signOut();
+    alert('Hi');
+    window.location='/';
+  })};
