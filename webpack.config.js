@@ -5,7 +5,8 @@ module.exports = {
     watch: true,
      entry: {
      "./login/main": './src/login.js',
-     "./login/test/main": './src/test.js',
+     //"./login/test/main": './src/test.js',
+     "./login/home/main": './src/home.js',
      "./ModalTest/main": './src/modal-test.js'
      },
     output: {

@@ -50,13 +50,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 
 /***/ }),
 
-/***/ "./src/test.js":
+/***/ "./src/home.js":
 /*!*********************!*\
-  !*** ./src/test.js ***!
+  !*** ./src/home.js ***!
   \*********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ \"./node_modules/firebase/auth/dist/esm/index.esm.js\");\n//import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';\n//import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';\n\n\n\nconsole.log('working!!!')\n\n\nconst firebaseApp = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)({\n    apiKey: \"AIzaSyDhotO15Sh5GMBR1Eo_Ol83W70ndyYcCvA\",\n    authDomain: \"bcp-shop-3cf1e.firebaseapp.com\",\n    projectId: \"bcp-shop-3cf1e\",\n    storageBucket: \"bcp-shop-3cf1e.appspot.com\",\n    messagingSenderId: \"180818875291\",\n    appId: \"1:180818875291:web:3a11cb9065560aed0a873e\",\n    measurementId: \"G-QYXLV35DG1\"\n});\n\n\nconst auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.getAuth)(firebaseApp);\n\nwindow.onload = () => {\n  document.getElementById('sign-out').addEventListener(\"click\", () => {\n    accountSignOut();\n  });\n}\n\n\n//* Sign-out Account *//\nvar accountSignOut = function() {\n  ;(0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signOut)(auth).then(() => {\n    console.log('Sign-Out Account successful');\n    window.location = '/';\n    // Sign-out successful.\n  }).catch((error) => {\n    // An error happened.\n  });\n}\n\nfunction logOut(){\n  document.getElementById('sign-out').addEventListener('click', function(event) {\n    firebase.auth().signOut();\n    alert('Hi');\n    window.location='/';\n  })};\n\n//# sourceURL=webpack://bcp-shop/./src/test.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var firebase_app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! firebase/app */ \"./node_modules/firebase/app/dist/esm/index.esm.js\");\n/* harmony import */ var firebase_auth__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! firebase/auth */ \"./node_modules/firebase/auth/dist/esm/index.esm.js\");\n//import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js';\n//import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js';\n\n\n\nconsole.log('working!!!')\n\n\nconst firebaseApp = (0,firebase_app__WEBPACK_IMPORTED_MODULE_0__.initializeApp)({\n    apiKey: \"AIzaSyDhotO15Sh5GMBR1Eo_Ol83W70ndyYcCvA\",\n    authDomain: \"bcp-shop-3cf1e.firebaseapp.com\",\n    projectId: \"bcp-shop-3cf1e\",\n    storageBucket: \"bcp-shop-3cf1e.appspot.com\",\n    messagingSenderId: \"180818875291\",\n    appId: \"1:180818875291:web:3a11cb9065560aed0a873e\",\n    measurementId: \"G-QYXLV35DG1\"\n});\n\n\nconst auth = (0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.getAuth)(firebaseApp);\n\nwindow.onload = () => {\n  document.getElementById('sign-out').addEventListener(\"click\", () => {\n    accountSignOut();\n  });\n}\n\n\n//* Sign-out Account *//\nvar accountSignOut = function() {\n  ;(0,firebase_auth__WEBPACK_IMPORTED_MODULE_1__.signOut)(auth).then(() => {\n    console.log('Sign-Out Account successful');\n    window.location = '/';\n    // Sign-out successful.\n  }).catch((error) => {\n    // An error happened.\n  });\n}\n\nfunction logOut(){\n  document.getElementById('sign-out').addEventListener('click', function(event) {\n    firebase.auth().signOut();\n    alert('Hi');\n    window.location='/';\n  })};\n\n//# sourceURL=webpack://bcp-shop/./src/home.js?");
 
 /***/ }),
 
@@ -202,7 +202,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/test.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./src/home.js");
 /******/ 	
 /******/ })()
 ;

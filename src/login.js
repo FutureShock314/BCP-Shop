@@ -108,7 +108,7 @@ var accountSignOut = function() {
 
 auth.onAuthStateChanged(user => {
   if(user) {
-    window.location = 'login/test'; //After successful login, user will be redirected to home.html
+    window.location = '/login/home'; //After successful login, user will be redirected to home.html
   }});
 //   else {
 //     window.location = '/';
