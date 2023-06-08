@@ -4,8 +4,8 @@ module.exports = {
     mode: "development",
     watch: true,
      entry: {
-     "./main": './src/index.js',
-     "./test/main": './src/test.js',
+     "./login/main": './src/login.js',
+     "./login/test/main": './src/test.js',
      "./ModalTest/main": './src/modal-test.js'
      },
     output: {
