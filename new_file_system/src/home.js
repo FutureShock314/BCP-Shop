@@ -39,3 +39,10 @@ var accountSignOut = function() {
     // An error happened.
   });
 }
+
+function logOut(){
+  document.getElementById('sign-out').addEventListener('click', function(event) {
+    firebase.auth().signOut();
+    alert('Hi');
+    window.location='/';
+  })};

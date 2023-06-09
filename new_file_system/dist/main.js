@@ -15,7 +15,7 @@
   \*********************/
 /***/ (() => {
 
-eval("\n\n//# sourceURL=webpack:///./src/main.js?");
+eval("document.getElementsByClassName('sign-in')[0].addEventListener(\"click\", () => {\n    window.location = './login'\n});\n\n//# sourceURL=webpack:///./src/main.js?");
 
 /***/ })
 
