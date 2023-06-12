@@ -15,7 +15,7 @@
   \*********************/
 /***/ (() => {
 
-eval("document.getElementsByClassName('sign-in')[0].addEventListener(\"click\", () => {\r\n    window.location = './login'\r\n});\n\n//# sourceURL=webpack://bcp-shop/./src/main.js?");
+eval("document.getElementsByClassName('sign-in')[0].addEventListener(\"click\", () => {\n    window.location = './login'\n});\n\n//# sourceURL=webpack://bcp-shop/./src/main.js?");
 
 /***/ })
 
