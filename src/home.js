@@ -37,8 +37,8 @@ var accountSignOut = () => {
 
 let sign_out_function = () => {
   console.log("window loaded");
-  console.log("Elements with sign-out class: " + getElementsByClass('sign-out'));
-  document.getElementsByClass('sign-out')[0].addEventListener("click", () => {
+  console.log("Elements with sign-out class: " + document.getElementsByClassName('sign-out'));
+  document.getElementsByClassName('sign-out')[0].addEventListener("click", () => {
     accountSignOut();
   });
 };
