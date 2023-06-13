@@ -6,7 +6,7 @@ import {
   signOut
 } from 'firebase/auth';
 
-console.log('working!!!')
+console.log('working (home-page)')
 
 
 const firebaseApp = initializeApp({
@@ -30,7 +30,7 @@ window.onload = () => {
 
 
 //* Sign-out Account *//
-var accountSignOut = function() {
+var accountSignOut = () => {
   signOut(auth).then(() => {
     console.log('Sign-Out Account successful');
     window.location = '/';
@@ -41,8 +41,8 @@ var accountSignOut = function() {
 }
 
 function logOut(){
-  document.getElementById('sign-out').addEventListener('click', function(event) {
-    firebase.auth().signOut();
+  document.getElementById('sign-out').addEventListener('click', (event) => {
+    auth.signOut();
     alert('Hi');
     window.location='/';
   })};
