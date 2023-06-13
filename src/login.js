@@ -12,7 +12,7 @@ import {
 } from 'firebase/auth';
 import { getFirestore, doc, setDoc } from 'firebase/firestore';
 
-console.log('working!!!')
+console.log('working (login-page)')
 
 
 const firebaseApp = initializeApp({
