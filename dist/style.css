@@ -53,7 +53,7 @@ html {
 .top-title,
 .bottom-title {
     font-family: "Montserrat", sans-serif;
-    font-size: 15rem;
+    font-size: 13rem;
 }
 
 .top {
@@ -114,9 +114,32 @@ html {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     display: block;
+
+    background-position: -96px -490px;
 }
+
+.button {
+    height: 75px;
+    width: 150px;
+
+    background: black;
+
+    margin: auto;
     
-    
+    cursor: pointer;
+}
+
+.button.login {
+    /* transform: translateX(150px);
+    transform: translateY(-200px); */
+    transform: translate(150px, -250px);
+}
+
+.button.sign-up {
+    transform: translate(-150px, calc(-250px - 75px));
+}
+
+
 @media only screen and (device-width: 810px) and (device-height: 1080px) {
     .top-title,
     .bottom-title {
