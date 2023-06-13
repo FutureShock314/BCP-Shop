@@ -22,27 +22,26 @@ const firebaseApp = initializeApp({
 
 const auth = getAuth(firebaseApp);
 
-window.onload = () => {
-  document.getElementById('sign-out').addEventListener("click", () => {
-    accountSignOut();
-  });
-}
 
-
-//* Sign-out Account *//
 var accountSignOut = () => {
-  signOut(auth).then(() => {
+  signOut(auth)
+  .then(() => {
     console.log('Sign-Out Account successful');
     window.location = '/';
     // Sign-out successful.
   }).catch((error) => {
-    // An error happened.
+    console.error(error)
   });
-}
+};
 
-function logOut(){
-  document.getElementById('sign-out').addEventListener('click', (event) => {
-    auth.signOut();
-    alert('Hi');
-    window.location='/';
-  })};
+
+let sign_out_function = () => {
+  console.log("window loaded");
+  console.log("Elements with sign-out class: " + getElementsByClass('sign-out'));
+  document.getElementsByClass('sign-out')[0].addEventListener("click", () => {
+    accountSignOut();
+  });
+};
+
+
+window.addEventListener("load", sign_out_function(), false);
