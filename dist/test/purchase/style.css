@@ -1,0 +1,17 @@
+.modal-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    width: 40px;
+    height: 40px;
+
+    border: 5px solid red;
+    border-radius: 0px 30px 0px 5px;
+}
+
+.modal-close > i {
+    position: absolute;
+    top: 12.5px;
+    right: 12.5px;
+}
