@@ -6,11 +6,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* outline: green solid 2px; */
 }
 
 html {
-    overflow: hidden;
-    overflow-y: auto; /*! REMOVE BEFORE GOING LIVE !*/
+    overflow: hidden !;
+    /* overflow-y: auto; ! REMOVE BEFORE GOING LIVE ! */
 }
 
 .land {
@@ -118,8 +120,8 @@ html {
 }
 
 .button {
-    height: 75px;
-    width: 150px;
+    height: var(--button-height);
+    width: var(--button-width);
 
     background: black;
 
@@ -128,17 +130,8 @@ html {
     cursor: pointer;
 }
 
-.button.login {
-    /* transform: translateX(150px);
-    transform: translateY(-200px); */
-    transform: translate(150px, -250px);
-}
-
-.button.sign-up {
-    transform: translate(-150px, calc(-250px - 75px));
-}
-
 @media only screen and (device-width: 810px) and (device-height: 1080px) {
+
     .top-title,
     .bottom-title {
         font-size: 7rem;
@@ -151,54 +144,244 @@ html {
     }
 }
 
-@property --gradient-angle {
+:root {
+    --button-height: 75px;
+    --button-width: 150px;
+}
+
+@property --rotate {
     syntax: "<angle>";
-    initial-value: 0deg;
+    initial-value: 132deg;
     inherits: false;
 }
 
-:root {
-    --clr-1: #052b2f;
-    --clr-2: #073438;
-    --clr-3: #0e4b50;
-    --clr-4: #2d8f85;
-    --clr-5: #637c54;
+/* .login {
+    z-index: -1;
+    content: "";
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: 8px;
+    background-image: linear-gradient(
+        var(--rotate),
+        #5ddcff,
+        #3c67e3 43%,
+        #4e00c2
+        );
+        animation: spin 2.5s linear infinite;
+    
+    }
+    
+    .login::after {
+        content: "";
+        filter: blur(3.5rem);
+        z-index: -2;
+        width: var(--button-width);
+        height: var(--button-height);
+        border-radius: 8px;
+        background-image: linear-gradient(
+            var(--rotate),
+            #5ddcff,
+            #3c67e3 43%,
+            #4e00c2
+            );
+            animation: spin 2.5s linear infinite;
+        }
+        
+        .login-fore {
+            background: #191c29;
+            width: 96%;
+            height: 94%;
+            
+            position: absolute;
+            top: 3%;
+            left: 2%;
+            
+            padding: 3px;
+            position: relative;
+            border-radius: 6px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            display: flex;
+            font-size: 1.5em;
+            color: rgb(88 199 250 / 0%);
+            cursor: pointer;
+        } */
+
+/* .sign-up {
+    content: "";
+    width: var(--button-width);
+    height: var(--button-height);
+    border-radius: 8px;
+    background-image: linear-gradient(
+        var(--rotate),
+        #5ddcff,
+        #3c67e3 43%,
+        #4e00c2
+    );
+    animation: spin 2.5s linear infinite;
+
+    transform: translate(150px, -250px);
+}
+
+.sign-up-fore {
+    background: #191c29;
+    width: 96%;
+    height: 94%;
+    
+    position: absolute;
+    top: 3%;
+    left: 2%;
+    
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    color: rgb(88 199 250 / 0%);
+    cursor: pointer;
+} */
+
+.login-wrapper {
+    transform: translate(150px, -250px);
+    width: fit-content;
+    margin: auto;
 }
 
 .login {
-    background: var(--clr-1);
-    border-radius: 0.5rem;
-
+    background: #191c29;
+    width: var(--button-width);
+    height: var(--button-height);
+    padding: 3px;
     position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    /* color: rgb(88 199 250 / 0%); */
+    cursor: pointer;
+
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+
 }
 
-.login::before,
-.login::after {
+.login::before {
     content: "";
+    width: 102%;
+    height: 104%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate),
+            #5ddcff,
+            #3c67e3 43%,
+            #4e00c2);
     position: absolute;
-    inset: -0.5rem;
     z-index: -1;
-    background: conic-gradient(
-        from var(--gradient-angle),
-        var(--clr-3),
-        var(--clr-4),
-        var(--clr-5),
-        var(--clr-4),
-        var(--clr-3)
+    top: -2%;
+    left: -1%;
+    animation: spin 2.5s linear infinite;
+}
+
+/* .login::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--button-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--button-height) / 6));
+    background-image: linear-gradient(var(--rotate),
+            #5ddcff,
+            #3c67e3 43%,
+            #4e00c2);
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+} */
+
+.sign-up-wrapper {
+    transform: translate(-150px, calc(-250px - var(--button-height)));
+    width: fit-content;
+    margin: auto;
+}
+
+.sign-up {
+    background: #191c29;
+    width: var(--button-width);
+    height: var(--button-height);
+    padding: 3px;
+    position: relative;
+    border-radius: 6px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    font-size: 1.5em;
+    /* color: rgb(88 199 250 / 0%); */
+    color: white;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    cursor: pointer;
+}
+
+.sign-up::before {
+    content: "";
+    width: 105%;
+    height: 110%;
+    border-radius: 8px;
+    background-image: linear-gradient(var(--rotate),
+            #5ddcff,
+            #3c67e3 43%,
+            #4e00c2);
+    position: absolute;
+    z-index: -1;
+    top: -5%;
+    left: -2.5%;
+    animation: spin 2.5s linear infinite;
+}
+
+/* .sign-up::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--button-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--button-height) / 6));
+    background-image: linear-gradient(
+        var(--rotate),
+        #5ddcff,
+        #3c67e3 43%,
+        #4e00c2
     );
-    border-radius: inherit;
-    animation: rotation 20s linear infinite;
-}
+    opacity: 1;
+    transition: opacity 0.5s;
+    animation: spin 2.5s linear infinite;
+} */
 
-.login::after {
-    filter: blur(3.5rem);
-}
-
-@keyframes rotation {
+@keyframes spin {
     0% {
-        --gradient-angle: 0deg;
+        --rotate: 0deg;
     }
+
     100% {
-        --gradient-angle: 360deg;
+        --rotate: 360deg;
     }
 }
+
+
+REMEMBER TO SEE IF YOU CAN MERGE SIGN-UP AND LOGIN INTO JUST ONE AS THEY USE THE SAME STYLING
