@@ -25,6 +25,7 @@ const auth = getAuth(firebaseApp);
 
 var accountSignOut = () => {
   signOut(auth)
+  console.log('sign-out')
   .then(() => {
     console.log('Sign-Out Account successful');
     window.location = '/';
