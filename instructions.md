@@ -2,8 +2,7 @@
 
 - run `npm install`
 - run `npx webpack`
-- run `serve dist`
-  - You may need to run `npm install --global serve`
+- run `npx serve dist`
 - go to the address given
 - check the console in inspect to see the output!
 
