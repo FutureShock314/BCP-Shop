@@ -214,16 +214,16 @@ html {
     /* transform: scale(0.8); */
     /* filter: blur(calc(var(--button-height) / 6)); */
     filter: blur(2rem);
-    /* background-image: conic-gradient(from var(--rotate),
+    background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3,
             #4e00c2,
             #3c67e3,
-            #5ddcff); */
-    background-image: conic-gradient(from var(--rotate),
+            #5ddcff);
+    /* background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3 43%,
-            #4e00c2);
+            #4e00c2); */
     opacity: 1;
     transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
