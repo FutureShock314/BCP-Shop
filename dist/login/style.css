@@ -1,0 +1,43 @@
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    outline: green solid 2px;
+}
+
+html {
+    overflow: hidden;
+}
+
+
+body {
+    background: #00000f;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#user-form {
+    background: white;
+
+    height: 75%;
+    width: 75%;
+
+    position: absolute;
+    top: 50%;
+    /* -ms-transform: translateY(-50%); */
+    transform: translateY(-50%);
+
+    display: flex;
+}
+
+.form {
+    justify-self: flex-end;
+    width: 50%;
+}
+
+FIX
