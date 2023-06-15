@@ -26,7 +26,7 @@ for(var i = 0; i < count; i++) {
     closeModal.addEventListener('click', (event) => {
         console.info('yay, close button pressed');
         var modalName = event.target.id.toLowerCase();
-        console.log(modalName+' vs '+item)
+        console.log('modalName: \''+modalName+'\'');
         console.info(document.querySelector('.'+item+'-modal'));
         document.querySelector('.'+modalName+'-modal').close();
     });
@@ -41,5 +41,4 @@ for(var i = 0; i < count; i++) {
     });*/
     console.log(i + item);
 }
-console.info('modals: '+modals);
 console.log('finished');
