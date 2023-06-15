@@ -5,9 +5,7 @@ var items = [
     'pen'
 ];
 var modals = [];
-var modalOpenButtons = [];
-var modalCloseButtons = [];
-var purchaseButtons = [];
+var modals2= [];
 
 var buyItem = (itemName, personName) => {
     console.log('Bought Stuffs ('+itemName+') for '+personName);
@@ -23,9 +21,15 @@ for(var i = 0; i < count; i++) {
     //var tempModal = document.querySelector('.'+item+'-modal');
     //modals.push(tempModal);
 
-    document.querySelector('.'+item+'-modal-open').addEventListener('click', () => {
-        document.querySelector('.'+item+'-modal').showModal();
-    })
+
+    var openModal = document.querySelector('.'+item+'-modal-open');
+    openModal.addEventListener('click', (event) => {
+        //modals2.push('.'+item+'-modal');
+        console.info('yay, button pressed');
+        var modalName = event.target.innerHTML.toLowerCase();
+        console.info(document.querySelector('.'+item+'-modal'));
+        document.querySelector('.'+modalName+'-modal').showModal();
+    });
     //modalCloseButtons.push(document.querySelector('.'+item+'-modal-close'));
     //purchaseButtons.push(document.querySelector('.'+item+'-purchase'));
 
