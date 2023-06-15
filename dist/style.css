@@ -11,8 +11,9 @@
 }
 
 html {
-    overflow: hidden !;
-    /* overflow-y: auto; ! REMOVE BEFORE GOING LIVE ! */
+    overflow: hidden;
+    /* overflow-y: auto; */
+    /* ! REMOVE BEFORE GOING LIVE ! */
 }
 
 .land {
@@ -155,96 +156,6 @@ html {
     inherits: false;
 }
 
-/* .login {
-    z-index: -1;
-    content: "";
-    width: var(--button-width);
-    height: var(--button-height);
-    border-radius: 8px;
-    background-image: linear-gradient(
-        var(--rotate),
-        #5ddcff,
-        #3c67e3 43%,
-        #4e00c2
-        );
-        animation: spin 2.5s linear infinite;
-    
-    }
-    
-    .login::after {
-        content: "";
-        filter: blur(3.5rem);
-        z-index: -2;
-        width: var(--button-width);
-        height: var(--button-height);
-        border-radius: 8px;
-        background-image: linear-gradient(
-            var(--rotate),
-            #5ddcff,
-            #3c67e3 43%,
-            #4e00c2
-            );
-            animation: spin 2.5s linear infinite;
-        }
-        
-        .login-fore {
-            background: #191c29;
-            width: 96%;
-            height: 94%;
-            
-            position: absolute;
-            top: 3%;
-            left: 2%;
-            
-            padding: 3px;
-            position: relative;
-            border-radius: 6px;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            display: flex;
-            font-size: 1.5em;
-            color: rgb(88 199 250 / 0%);
-            cursor: pointer;
-        } */
-
-/* .sign-up {
-    content: "";
-    width: var(--button-width);
-    height: var(--button-height);
-    border-radius: 8px;
-    background-image: linear-gradient(
-        var(--rotate),
-        #5ddcff,
-        #3c67e3 43%,
-        #4e00c2
-    );
-    animation: spin 2.5s linear infinite;
-
-    transform: translate(150px, -250px);
-}
-
-.sign-up-fore {
-    background: #191c29;
-    width: 96%;
-    height: 94%;
-    
-    position: absolute;
-    top: 3%;
-    left: 2%;
-    
-    padding: 3px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 1.5em;
-    color: rgb(88 199 250 / 0%);
-    cursor: pointer;
-} */
-
 .login-wrapper {
     transform: translate(150px, -250px);
     width: fit-content;
@@ -274,40 +185,49 @@ html {
 
 .login::before {
     content: "";
-    width: 102%;
-    height: 104%;
+    width: 105%;
+    height: 110%;
     border-radius: 8px;
-    background-image: linear-gradient(var(--rotate),
+    background-image: conic-gradient(from var(--rotate),
             #5ddcff,
-            #3c67e3 43%,
-            #4e00c2);
+            #3c67e3,
+            #4e00c2,
+            #3c67e3,
+            #5ddcff);
     position: absolute;
     z-index: -1;
-    top: -2%;
-    left: -1%;
+    top: -5%;
+    left: -2.5%;
     animation: spin 2.5s linear infinite;
 }
 
-/* .login::after {
+.login::after {
     position: absolute;
     content: "";
-    top: calc(var(--button-height) / 6);
+    /* top: calc(var(--button-height) / 6); */
     left: 0;
     right: 0;
     z-index: -1;
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--button-height) / 6));
-    background-image: linear-gradient(var(--rotate),
+    /* transform: scale(0.8); */
+    /* filter: blur(calc(var(--button-height) / 6)); */
+    filter: blur(2rem);
+    /* background-image: conic-gradient(from var(--rotate),
+            #5ddcff,
+            #3c67e3,
+            #4e00c2,
+            #3c67e3,
+            #5ddcff); */
+    background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3 43%,
             #4e00c2);
     opacity: 1;
     transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
-} */
+}
 
 .sign-up-wrapper {
     transform: translate(-150px, calc(-250px - var(--button-height)));
@@ -339,39 +259,50 @@ html {
     width: 105%;
     height: 110%;
     border-radius: 8px;
-    background-image: linear-gradient(var(--rotate),
+    background-image: conic-gradient(from var(--rotate),
+            #0000ff,
+            #ff0000,
+            #0000ff,
+            #ff0000,
+            #0000ff);
+    /* background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3 43%,
-            #4e00c2);
+            #4e00c2); */
     position: absolute;
     z-index: -1;
     top: -5%;
     left: -2.5%;
-    animation: spin 2.5s linear infinite;
+    animation: spin 2.5s linear infinite reverse;
 }
 
-/* .sign-up::after {
+.sign-up::after {
     position: absolute;
     content: "";
-    top: calc(var(--button-height) / 6);
+    /* top: calc(var(--button-height) / 6); */
     left: 0;
     right: 0;
     z-index: -1;
     height: 100%;
     width: 100%;
     margin: 0 auto;
-    transform: scale(0.8);
-    filter: blur(calc(var(--button-height) / 6));
-    background-image: linear-gradient(
-        var(--rotate),
-        #5ddcff,
-        #3c67e3 43%,
-        #4e00c2
-    );
+    /* transform: scale(0.8); */
+    /* filter: blur(calc(var(--button-height) / 6)); */
+    filter: blur(2rem);
+    background-image: conic-gradient(from var(--rotate),
+            #0000ff,
+            #ff0000,
+            #0000ff,
+            #ff0000,
+            #0000ff);
+    /* background-image: linear-gradient(var(--rotate),
+            #5ddcff,
+            #3c67e3 43%,
+            #4e00c2); */
     opacity: 1;
     transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
-} */
+}
 
 @keyframes spin {
     0% {
@@ -384,4 +315,4 @@ html {
 }
 
 
-REMEMBER TO SEE IF YOU CAN MERGE SIGN-UP AND LOGIN INTO JUST ONE AS THEY USE THE SAME STYLING
+REMEMBER TO SEE IF YOU CAN MERGE SIGN-UP AND LOGIN INTO JUST ONE AS THEY USE THE SAME STYLING SHOW NATHAN POSSIBLE BUTTON STYLINGS
