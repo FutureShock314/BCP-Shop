@@ -4,13 +4,7 @@ var items = [
     'football',
     'pen'
 ];
-var modals = [];
-var modals2= [];
 
-var buyItem = (itemName, personName) => {
-    console.log('Bought Stuffs ('+itemName+') for '+personName);
-    //* Do firebase buy stuff *//
-};
 
 var count = items.length;
 for(var i = 0; i < count; i++) {
@@ -18,33 +12,33 @@ for(var i = 0; i < count; i++) {
     var item = items[i];
     console.log(item);
 
-    //var tempModal = document.querySelector('.'+item+'-modal');
-    //modals.push(tempModal);
-
-
     var openModal = document.querySelector('.'+item+'-modal-open');
+    console.log("openModal set");
     openModal.addEventListener('click', (event) => {
-        //modals2.push('.'+item+'-modal');
-        console.info('yay, button pressed');
         var modalName = event.target.innerHTML.toLowerCase();
+        console.log("modalName set")
         console.info(document.querySelector('.'+item+'-modal'));
         document.querySelector('.'+modalName+'-modal').showModal();
     });
-    //modalCloseButtons.push(document.querySelector('.'+item+'-modal-close'));
-    //purchaseButtons.push(document.querySelector('.'+item+'-purchase'));
+    console.log('added open event listener for '+item);
 
-    //var itemPerson = document.querySelector('.'+item+'-name');
+    var closeModal = document.querySelector('.'+item+'-modal-close');
+    closeModal.addEventListener('click', (event) => {
+        console.info('yay, close button pressed');
+        var modalName = event.target.id.toLowerCase();
+        console.log(modalName+' vs '+item)
+        console.info(document.querySelector('.'+item+'-modal'));
+        document.querySelector('.'+modalName+'-modal').close();
+    });
+    console.log('added close event listener for '+item);
 
-    /*modalOpenButtons[i].addEventListener('click', () => {
-        modals[i].showModal();
-    });
-    /*modalCloseButtons[i].addEventListener('click', () => {
-        modals[i].close();
-    });
-    purchaseButtons[i].addEventListener('click', () => {
-        buyItem(item, itemPerson);
+    /*var purchaseButton = document.querySelector('.'+item+'-modal-open');
+    purchaseButton.addEventListener('click', (event) => {
+        console.info('yay, button pressed');
+        var itemName = event.target.innerHTML.toLowerCase();
+        console.info(document.querySelector('.'+itemName+'-purchase'));
+        document.querySelector('.'+itemName+'-purchase');
     });*/
-
     console.log(i + item);
 }
 console.info('modals: '+modals);
