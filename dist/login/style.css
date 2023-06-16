@@ -52,6 +52,13 @@ body {
 
 .button {
     border-radius: inherit;
+    background-color: black;
+    color: white;
+    border: none;
+}
+
+#sign-out {
+    border-radius: 0, 0, 2rem, 0;
 }
 
 FIX
