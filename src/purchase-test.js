@@ -2,7 +2,8 @@ console.log("working (purchase-test)");
 
 var items = [
     'football',
-    'pen'
+    'pen',
+    'albatross'
 ];
 
 
@@ -27,7 +28,7 @@ for(var i = 0; i < count; i++) {
         console.info('yay, close button pressed');
         var modalName = event.target.id.toLowerCase();
         console.log('modalName: \''+modalName+'\'');
-        console.info(document.querySelector('.'+item+'-modal'));
+        console.info(document.querySelector('.'+modalName+'-modal'));
         document.querySelector('.'+modalName+'-modal').close();
     });
     console.log('added close event listener for '+item);
