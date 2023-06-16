@@ -227,6 +227,7 @@ html {
     opacity: 1;
     transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
+    border-radius: inherit;
 }
 
 .sign-up-wrapper {
@@ -302,6 +303,7 @@ html {
     opacity: 1;
     transition: opacity 0.5s;
     animation: spin 2.5s linear infinite;
+    border-radius: 6px;
 }
 
 @keyframes spin {
