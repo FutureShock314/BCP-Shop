@@ -9,14 +9,24 @@
 
   // These tasks can be run from CodeSandbox. Running one will open a log in the app.
   "tasks": {
-    "serve dist": {
-      "name": "serve dist",
-      "command": "serve dist",
+    "npm i": {
+      "name": "npm i",
+      "command": "npm i",
+      "runAtStart": true
+    },
+    "Install serve": {
+      "name": "Install Serve",
+      "command": "npm install --global serve",
       "runAtStart": true
     },
     "webpack": {
       "name": "webpack",
       "command": "npx webpack",
+      "runAtStart": true
+    },
+    "serve dist": {
+      "name": "serve dist",
+      "command": "serve dist",
       "runAtStart": true
     }
   }
