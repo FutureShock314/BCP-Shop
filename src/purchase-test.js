@@ -33,13 +33,13 @@ for(var i = 0; i < count; i++) {
     });
     console.log('added close event listener for '+item);
 
-    /*var purchaseButton = document.querySelector('.'+item+'-modal-open');
+    var purchaseButton = document.querySelector('.'+item+'-modal-open');
     purchaseButton.addEventListener('click', (event) => {
         console.info('yay, button pressed');
         var itemName = event.target.innerHTML.toLowerCase();
         console.info(document.querySelector('.'+itemName+'-purchase'));
-        document.querySelector('.'+itemName+'-purchase');
-    });*/
+        console.info('student name: ' + document.querySelector('.'+itemName+'-purchase').value);
+    });
     console.log(i + item);
 }
 console.log('finished');

@@ -24,8 +24,8 @@ const auth = getAuth(firebaseApp);
 
 
 var accountSignOut = () => {
+  console.log("starting signout")
   signOut(auth)
-  console.log('sign-out')
   .then(() => {
     console.log('Sign-Out Account successful');
     window.location = '/';
@@ -36,13 +36,9 @@ var accountSignOut = () => {
 };
 
 
-let sign_out_function = () => {
-  console.log("window loaded");
-  console.log("Elements with sign-out class: " + document.getElementsByClassName('sign-out'));
-  document.getElementsByClassName('sign-out')[0].addEventListener("click", () => {
-    accountSignOut();
-  });
-};
+document.getElementsByClassName("sign-out")[0].onclick = () => {
+  accountSignOut()
+}
 
 
-window.addEventListener("load", sign_out_function(), false);
+console.log("ended");
