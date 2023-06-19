@@ -8,6 +8,7 @@ module.exports = {
      "./home/main": './src/home.js',
      "./test/ModalTest/main": './src/modal-test.js',
      "./test/purchase/main": './src/purchase-test.js',
+     "./test/purchase/firestore_write": './src/purchase-test-2.js',
      "./main": './src/main.js',
      },
     output: {
