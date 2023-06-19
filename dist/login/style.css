@@ -1,64 +1,83 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    /* outline: green solid 2px; */
+  /* outline: green solid 2px; */
 }
 
 html {
-    overflow: hidden;
+  overflow: hidden;
 }
 
-
 body {
-    background: #00000f;
+  background: #00000f;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #user-form {
-    background: black;
-    color: white;
-    
-    border: 1px solid white;
-    border-radius: 2rem;
+  background: black;
+  color: white;
 
-    height: 75%;
-    width: 75%;
+  border: 1px solid white;
+  border-radius: 2rem;
 
-    position: absolute;
-    top: 50%;
-    /* -ms-transform: translateY(-50%); */
-    transform: translateY(-50%);
+  height: 75%;
+  width: 75%;
 
-    display: flex;
+  position: absolute;
+  top: 50%;
+  /* -ms-transform: translateY(-50%); */
+  transform: translateY(-50%);
+
+  display: flex;
 }
 
 .form {
-    justify-self: flex-end;
-    width: 50%;
-    display: grid;
+  justify-self: flex-end;
+  width: 50%;
+  display: grid;
+  grid-template-rows: 3fr 1fr 1fr 1fr;
 }
 
 .image {
-    justify-self: start;
-    width: 50%;
+  justify-self: start;
+  width: 50%;
 }
 
 .button {
-    border-radius: inherit;
-    background-color: black;
-    color: white;
-    border: none;
+  border-radius: inherit;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 2rem;
+
+  height: 30px;
+  width: 75%;
+  justify-self: center;
+  text-align: center;
 }
 
-#sign-out {
-    border-radius: 0, 0, 2rem, 0;
+div.title {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+
+  grid-template-rows: 1fr 1fr;
 }
 
-FIX
+div > h1,
+div > p {
+  justify-self: center;
+}
+
+div > p {
+  text-align: center;
+}
+
+/* FIX */
