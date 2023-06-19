@@ -31,7 +31,7 @@ const auth = getAuth(firebaseApp);
 let email;
 let password;
 window.onload = () => {
-  document.getElementById('add-user').addEventListener("click", () => {
+  document.getElementById('sign-up').addEventListener("click", () => {
     email = document.getElementById('email').value;
     password = document.getElementById('password').value;
     accountCreate(auth, email, password);

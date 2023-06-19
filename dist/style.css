@@ -3,25 +3,25 @@
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 
-    /* outline: green solid 2px; */
+  /* outline: green solid 2px; */
 }
 
 html {
-    overflow: hidden;
-    /* overflow-y: auto; */
-    /* ! REMOVE BEFORE GOING LIVE ! */
+  overflow: hidden;
+  /* overflow-y: auto; */
+  /* ! REMOVE BEFORE GOING LIVE ! */
 }
 
 .land {
-    height: 100vh;
-    width: 100%;
+  height: 100vh;
+  width: 100%;
 
-    /* * Made at https://colorgradient.dev/gradient-generator */
-    /* background-size: 100% 100%;
+  /* * Made at https://colorgradient.dev/gradient-generator */
+  /* background-size: 100% 100%;
     background-position: 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
     background-image: radial-gradient(
             75% 75% at 94% 89%,
@@ -43,56 +43,56 @@ html {
         ),
         linear-gradient(310deg, #00ffffff 0%, #073affff 100%); */
 
-    background-image: url("./img/gradient.png");
+  background-image: url("./img/gradient.png");
 }
 
 .top,
 .bottom {
-    height: 50%;
+  height: 50%;
 
-    display: flex;
+  display: flex;
 }
 
 .top-title,
 .bottom-title {
-    font-family: "Montserrat", sans-serif;
-    font-size: 13rem;
+  font-family: "Montserrat", sans-serif;
+  font-size: 13rem;
 }
 
 .top {
-    /* align-items: end; */
-    justify-content: center;
-    position: relative;
+  /* align-items: end; */
+  justify-content: center;
+  position: relative;
 }
 
 .bottom {
-    /* align-items: start; */
-    justify-content: center;
-    position: relative;
+  /* align-items: start; */
+  justify-content: center;
+  position: relative;
 
-    /* background: rgba(0, 0, 0, 50%); */
+  /* background: rgba(0, 0, 0, 50%); */
 
-    background: rgba(0, 0, 0, 0.25);
-    box-shadow: 0px -20px 60px 40px rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(4px);
-    -webkit-backdrop-filter: blur(7.5px);
-    /* border-radius: 10px; */
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0px -20px 60px 40px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(7.5px);
+  /* border-radius: 10px; */
 }
 
 .top-title {
-    position: absolute;
-    bottom: 0;
+  position: absolute;
+  bottom: 0;
 
-    line-height: 0.8;
+  line-height: 0.8;
 }
 
 .bottom-title {
-    position: absolute;
-    top: 0;
+  position: absolute;
+  top: 0;
 
-    line-height: 0.82;
+  line-height: 0.82;
 
-    /* background: radial-gradient(75% 75% at 94% 89%, #7300e8ff 0%, #7400e900 87%),
+  /* background: radial-gradient(75% 75% at 94% 89%, #7300e8ff 0%, #7400e900 87%),
     radial-gradient(75% 75% at 34% 41%, #00ffffff 0%, #073aff00 80%),
     radial-gradient(75% 75% at 17% 81%, #00e243ff 0%, #073aff00 70%),
     radial-gradient(75% 75% at 105% 5%, #6600ffff 0%, #073aff00 100%),
@@ -110,223 +110,229 @@ html {
         background-size: 100vh 100vw;
         background-position: 50%; */
 
-    background-image: url(./img/gradient.png);
+  background-image: url(./img/gradient.png);
 
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    display: block;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: block;
 
-    background-position: -96px -490px;
+  background-position: -96px -490px;
 }
 
 .button {
-    height: var(--button-height);
-    width: var(--button-width);
+  height: var(--button-height);
+  width: var(--button-width);
 
-    background: black;
+  background: black;
 
-    margin: auto;
+  margin: auto;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 @media only screen and (device-width: 810px) and (device-height: 1080px) {
+  .top-title,
+  .bottom-title {
+    font-size: 7rem;
+  }
 
-    .top-title,
-    .bottom-title {
-        font-size: 7rem;
-    }
+  .bottom-title {
+    /* transform: translateY(-3.6px); */
 
-    .bottom-title {
-        /* transform: translateY(-3.6px); */
-
-        background-position: -100px -375px;
-    }
+    background-position: -100px -375px;
+  }
 }
 
 :root {
-    --button-height: 75px;
-    --button-width: 150px;
+  --button-height: 75px;
+  --button-width: 150px;
 }
 
 @property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
 }
 
 .login-wrapper {
-    transform: translate(150px, -250px);
-    width: fit-content;
-    margin: auto;
+  transform: translate(150px, -250px);
+  width: fit-content;
+  margin: auto;
 }
 
 .login {
-    background: #191c29;
-    width: var(--button-width);
-    height: var(--button-height);
-    padding: 3px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 1.5em;
-    /* color: rgb(88 199 250 / 0%); */
-    cursor: pointer;
+  background: #191c29;
+  width: var(--button-width);
+  height: var(--button-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  /* color: rgb(88 199 250 / 0%); */
+  cursor: pointer;
 
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
-
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .login::before {
-    content: "";
-    width: 105%;
-    height: 110%;
-    border-radius: 8px;
-    background-image: conic-gradient(from var(--rotate),
-            #00c8ff,
-            #c300ff,
-            #00c8ff,
-            #c300ff,
-            #00c8ff);
-    /* background-image: conic-gradient(from var(--rotate),
+  content: "";
+  width: 105%;
+  height: 110%;
+  border-radius: 8px;
+  background-image: conic-gradient(
+    from var(--rotate),
+    #00c8ff,
+    #c300ff,
+    #00c8ff,
+    #c300ff,
+    #00c8ff
+  );
+  /* background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3,
             #4e00c2,
             #3c67e3,
             #5ddcff); */
-    position: absolute;
-    z-index: -1;
-    top: -5%;
-    left: -2.5%;
-    animation: spin 2.5s linear infinite;
+  position: absolute;
+  z-index: -1;
+  top: -5%;
+  left: -2.5%;
+  animation: spin 2.5s linear infinite;
 }
 
 .login::after {
-    position: absolute;
-    content: "";
-    /* top: calc(var(--button-height) / 6); */
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    /* transform: scale(0.8); */
-    /* filter: blur(calc(var(--button-height) / 6)); */
-    filter: blur(2rem);
-    background-image: conic-gradient(from var(--rotate),
-            #00c8ff,
-            #c300ff,
-            #00c8ff,
-            #c300ff,
-            #00c8ff);
-    /* background-image: conic-gradient(from var(--rotate),
+  position: absolute;
+  content: "";
+  /* top: calc(var(--button-height) / 6); */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  /* transform: scale(0.8); */
+  /* filter: blur(calc(var(--button-height) / 6)); */
+  filter: blur(1rem);
+  background-image: conic-gradient(
+    from var(--rotate),
+    #00c8ff,
+    #c300ff,
+    #00c8ff,
+    #c300ff,
+    #00c8ff
+  );
+  /* background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3,
             #4e00c2,
             #3c67e3,
             #5ddcff); */
-    /* background-image: conic-gradient(from var(--rotate),
+  /* background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3 43%,
             #4e00c2); */
-    opacity: 1;
-    transition: opacity 0.5s;
-    animation: spin 2.5s linear infinite;
-    border-radius: inherit;
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+  border-radius: inherit;
 }
 
 .sign-up-wrapper {
-    transform: translate(-150px, calc(-250px - var(--button-height)));
-    width: fit-content;
-    margin: auto;
+  transform: translate(-150px, calc(-250px - var(--button-height)));
+  width: fit-content;
+  margin: auto;
 }
 
 .sign-up {
-    background: #191c29;
-    width: var(--button-width);
-    height: var(--button-height);
-    padding: 3px;
-    position: relative;
-    border-radius: 6px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    display: flex;
-    font-size: 1.5em;
-    /* color: rgb(88 199 250 / 0%); */
-    color: white;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background: #191c29;
+  width: var(--button-width);
+  height: var(--button-height);
+  padding: 3px;
+  position: relative;
+  border-radius: 6px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  font-size: 1.5em;
+  /* color: rgb(88 199 250 / 0%); */
+  color: white;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .sign-up::before {
-    content: "";
-    width: 105%;
-    height: 110%;
-    border-radius: 8px;
-    background-image: conic-gradient(from var(--rotate),
-            #0000ff,
-            #ff0000,
-            #0000ff,
-            #ff0000,
-            #0000ff);
-    /* background-image: conic-gradient(from var(--rotate),
+  content: "";
+  width: 105%;
+  height: 110%;
+  border-radius: 8px;
+  background-image: conic-gradient(
+    from var(--rotate),
+    #0000ff,
+    #ff0000,
+    #0000ff,
+    #ff0000,
+    #0000ff
+  );
+  /* background-image: conic-gradient(from var(--rotate),
             #5ddcff,
             #3c67e3 43%,
             #4e00c2); */
-    position: absolute;
-    z-index: -1;
-    top: -5%;
-    left: -2.5%;
-    animation: spin 2.5s linear infinite reverse;
+  position: absolute;
+  z-index: -1;
+  top: -5%;
+  left: -2.5%;
+  animation: spin 2.5s linear infinite reverse;
 }
 
 .sign-up::after {
-    position: absolute;
-    content: "";
-    /* top: calc(var(--button-height) / 6); */
-    left: 0;
-    right: 0;
-    z-index: -1;
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-    /* transform: scale(0.8); */
-    /* filter: blur(calc(var(--button-height) / 6)); */
-    filter: blur(2rem);
-    background-image: conic-gradient(from var(--rotate),
-            #0000ff,
-            #ff0000,
-            #0000ff,
-            #ff0000,
-            #0000ff);
-    /* background-image: linear-gradient(var(--rotate),
+  position: absolute;
+  content: "";
+  /* top: calc(var(--button-height) / 6); */
+  left: 0;
+  right: 0;
+  z-index: -1;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  /* transform: scale(0.8); */
+  /* filter: blur(calc(var(--button-height) / 6)); */
+  filter: blur(2rem);
+  background-image: conic-gradient(
+    from var(--rotate),
+    #0000ff,
+    #ff0000,
+    #0000ff,
+    #ff0000,
+    #0000ff
+  );
+  /* background-image: linear-gradient(var(--rotate),
             #5ddcff,
             #3c67e3 43%,
             #4e00c2); */
-    opacity: 1;
-    transition: opacity 0.5s;
-    animation: spin 2.5s linear infinite;
-    border-radius: 6px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  animation: spin 2.5s linear infinite;
+  border-radius: 6px;
 }
 
 @keyframes spin {
-    0% {
-        --rotate: 0deg;
-    }
+  0% {
+    --rotate: 0deg;
+  }
 
-    100% {
-        --rotate: 360deg;
-    }
+  100% {
+    --rotate: 360deg;
+  }
 }
 
-
-REMEMBER TO SEE IF YOU CAN MERGE SIGN-UP AND LOGIN INTO JUST ONE AS THEY USE THE SAME STYLING SHOW NATHAN POSSIBLE BUTTON STYLINGS
+/* REMEMBER TO SEE IF YOU CAN MERGE SIGN-UP AND LOGIN INTO JUST ONE AS THEY USE THE SAME STYLING SHOW NATHAN POSSIBLE BUTTON STYLINGS */
