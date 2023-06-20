@@ -26,7 +26,12 @@
     },
     "serve dist": {
       "name": "serve dist",
-      "command": "serve dist",
+      "command": "serve dist"
+      // "runAtStart": true
+    },
+    "npx serve dist": {
+      "name": "npx serve",
+      "command": "npx serve dist",
       "runAtStart": true
     }
   }

@@ -14,6 +14,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@clerk/clerk-js": "^4.49.0",
     "firebase": "^9.22.1",
     "firebaseui": "^6.0.2",
     "serve": "^14.2.0"

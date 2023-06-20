@@ -15,7 +15,11 @@ const firestore = getFirestore(firebaseApp);
 
 var tutor = '9DVE';
 var name = 'Nathan';
-var item/*itemList*/ = /*TODO READ DOC, GET LIST, APPEND, RE-WRITE TODO*/ 'Football';
+// var item/*itemList*/ = /*TODO READ DOC, GET LIST, APPEND, RE-WRITE TODO*/ 'Football';
+
+var item = () => {
+  
+}
 
 
 
