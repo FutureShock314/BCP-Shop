@@ -116,3 +116,6 @@ auth.onAuthStateChanged(user => {
 // });
 
 
+// window.Clerk.mountSignIn(
+//   document.getElementById("sign-in")
+// );
